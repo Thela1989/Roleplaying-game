@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: "Georgia", serif;
+}
+
+.header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#game {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.stat strong {
+  color: #ffd700;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+#controls img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+#controls button {
+  background-color: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#controls button:hover {
+  background-color: #b30d0d;
+}
+
+#image-with-text {
+  position: relative;
+  width: 100%;
+}
+
+#image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Georgia", serif;
+  color: #ffffff; /* Mörkbrun bläcklik färg */
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.start-page {
+  text-align: center;
+  padding-top: 100px;
+  height: 100vh;
+  background-image: url("/bilder/parchment-bakgrund.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #432818;
+  font-family: "Georgia", serif;
+}
+
+.start-page button {
+  padding: 1em 2em;
+  font-size: 1.2rem;
+  background-color: #f3e9dc;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #888;
+}
+
+#weapon {
+  color: #111;
+}
+#chestinventory {
+  width: 50px;
+}
