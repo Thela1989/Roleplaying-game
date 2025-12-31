@@ -1,32 +1,40 @@
 import { useEffect, useState } from "react";
-import { useStats } from "../hooks/useStats";
-import Inventory from "./components/inventory/Inventory";
-
-<Inventory characterId={character.id} />;
+import Inventory from "../components/inventory.jsx";
 
 function GamePage() {
   const [character, setCharacter] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/characters/1")
-      .then((res) => res.json())
-      .then((data) => setCharacter(data));
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch character");
+        return res.json();
+      })
+      .then((data) => setCharacter(data))
+      .catch((err) => setError(err.message));
   }, []);
 
-  if (!character) return <p>Laddar karaktär...</p>;
+  if (error) {
+    return <p style={{ color: "red" }}>Error: {error}</p>;
+  }
 
-  const stats = useStats({
-    level: character.level,
-    gold: character.gold,
-    health: character.vitality * 10, // exempel
-  });
+  if (!character) {
+    return <p>Laddar karaktär...</p>;
+  }
 
   return (
     <div>
-      <h2>{character.name}</h2>
-      <p>Level: {stats.level}</p>
-      <p>HP: {stats.health}</p>
-      <p>Gold: {stats.gold}</p>
+      <h1>{character.name}</h1>
+
+      <p>Level: {character.level}</p>
+      <p>Gold: {character.gold}</p>
+
+      <Inventory characterId={character.id} />
+
+      <div style={{ color: "green", marginTop: "20px" }}>
+        GamePage renderar korrekt ✔
+      </div>
     </div>
   );
 }
