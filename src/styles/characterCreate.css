@@ -1,0 +1,10 @@
+.CharacterCreate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.classesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
