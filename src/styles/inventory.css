@@ -1,0 +1,105 @@
+.inventory-slot {
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 4px,
+      rgba(0, 0, 0, 0.03) 4px,
+      rgba(0, 0, 0, 0.03) 8px
+    ),
+    linear-gradient(145deg, #2e2e2e, #1b1b1b);
+}
+
+/* === INVENTORY RAM === */
+
+.inventory-frame {
+  padding: 16px;
+  height: 100vh;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 240, 200, 0.95),
+    rgba(200, 170, 120, 0.95)
+  );
+
+  border: 4px solid #6b4b2a;
+  border-radius: 8px;
+
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.6);
+
+  font-family: "Cinzel", serif;
+}
+
+/* === TITEL === */
+.inventory-title {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #3a2a1a;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-shadow: 1px 1px 0 #d9c6a3;
+}
+
+/* === STATUS-TEXT (laddar / tom) === */
+.inventory-empty {
+  text-align: center;
+  color: #3a2a1a;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+/* === GRID === */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+}
+
+/* === SLOT === */
+.inventory-slot {
+  width: 80px;
+  height: 80px;
+
+  background: linear-gradient(145deg, #2e2e2e, #1b1b1b);
+  border: 2px solid #8c6a3d;
+  border-radius: 6px;
+
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+
+  position: relative;
+}
+
+/* === HOVER === */
+.inventory-slot:hover {
+  border-color: #d4af37;
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.3),
+    0 0 8px rgba(255, 215, 0, 0.4);
+  cursor: pointer;
+}
+
+/* === ITEM-NAMN === */
+.inventory-item-name {
+  position: absolute;
+  bottom: 6px;
+  left: 4px;
+  right: 4px;
+
+  font-size: 11px;
+  color: #e6d8b5;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+
+  pointer-events: none;
+}
+
+/* === ANTAL === */
+.inventory-item-quantity {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+
+  font-size: 12px;
+  color: #ffd700;
+  text-shadow: 1px 1px 2px black;
+
+  pointer-events: none;
+}
