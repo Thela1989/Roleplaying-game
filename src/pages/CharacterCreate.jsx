@@ -1,7 +1,10 @@
-import witch from "../assets/images/characters/witches/witch1.png";
 import "../styles/characterCreate.css";
+import { useState } from "react";
+import { characterImages } from "../data/CharacterImages";
 
 function CharacterCreate() {
+  const [selectedClass, setSelectedClass] = useState(null);
+
   return (
     <div className="CharacterCreate">
       <div className="CharacterHeader">Create your character</div>
@@ -16,15 +19,47 @@ function CharacterCreate() {
         <br />
         <label className="classenContainer">
           Witch
-          <input type="radio" name="class" value="witch" unchecked />
+          <input
+            type="radio"
+            name="class"
+            value="witch"
+            unchecked
+            onc
+            onChange={(e) => setSelectedClass(e.target.value)}
+          />
           Wizard
-          <input type="radio" name="class" value="wizard" unchecked />
+          <input
+            type="radio"
+            name="class"
+            value="wizard"
+            uncheckedonc
+            onChange={(e) => setSelectedClass(e.target.value)}
+          />
           Warrior
-          <input type="radio" name="class" value="warrior" unchecked />
+          <input
+            type="radio"
+            name="class"
+            value="warrior"
+            unchecked
+            onc
+            onChange={(e) => setSelectedClass(e.target.value)}
+          />
           Hunter
-          <input type="radio" name="class" value="hunter" unchecked />
+          <input
+            type="radio"
+            name="class"
+            value="hunter"
+            uncheckedonc
+            onChange={(e) => setSelectedClass(e.target.value)}
+          />
           Bard
-          <input type="radio" name="class" value="bard" unchecked />
+          <input
+            type="radio"
+            name="class"
+            value="bard"
+            uncheckedonc
+            onChange={(e) => setSelectedClass(e.target.value)}
+          />
           Rogue
           <input type="radio" name="class" value="rogue" unchecked />
           Barbarian
@@ -33,7 +68,9 @@ function CharacterCreate() {
       </form>
 
       <div className="CharacterContainer">
-        <img src={witch} alt="Witch character" />
+        {characterImages[selectedClass]?.map((image, index) => (
+          <img key={index} src={image} alt={`${selectedClass} character`} />
+        ))}
       </div>
     </div>
   );
