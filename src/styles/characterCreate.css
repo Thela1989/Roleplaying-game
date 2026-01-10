@@ -35,12 +35,12 @@ p {
 .CharacterContainer {
   margin: 20px;
   text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 img {
-  width: 150px;
   height: 150px;
   cursor: pointer;
   border: 2px solid transparent;
@@ -53,3 +53,62 @@ img:hover {
   transform: scale(1.08);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
+
+/* Style each class option: label + radio grouped with a border */
+/* Style each class option: the visible option box is a span.option */
+.classesContainer label {
+  margin: 0;
+}
+
+.classesContainer span.option {
+  border: 2px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px;
+  background: #fff;
+  color: #111; /* ensure text is visible on white background (body color is white by default) */
+}
+
+.classesContainer span.option:hover {
+  border-color: #888;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Style selected option using adjacent sibling selector */
+.classesContainer input[type="radio"]:checked + span.option {
+  border-color: #2b8cff;
+  box-shadow: 0 4px 12px rgba(43, 140, 255, 0.15);
+  background: #f0f8ff;
+  color: #09203f; /* darker/blue-tinted text when selected */
+}
+
+/* When input is inside .option, target the checked state via input:checked + .optionText
+   But since input is a child of .option now, use this rule to style .option when
+   its child input is checked. We can't upward-select without :has, so we apply
+   styles to .optionText when input is checked using sibling selector inside .option. */
+.classesContainer .option input[type="radio"] {
+  margin-right: 8px;
+}
+
+.classesContainer .option input[type="radio"]:checked + .optionText {
+  /* make text color match selected styling */
+  color: #09203f;
+}
+
+/* Selected character image styling */
+.CharacterContainer img.selected {
+  border-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+}
+
+.CharacterContainer img:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 140, 255, 0.15);
+}
+
+/* Note: `:has()` is supported in modern browsers. If older browsers
+   must be supported, consider placing the input before the text and
+   using the adjacent sibling selector instead. */

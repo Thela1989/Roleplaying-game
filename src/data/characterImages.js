@@ -20,7 +20,7 @@ import hunter3 from "../assets/images/characters/hunter/hunter3.png";
 import wizard1 from "../assets/images/characters/wizards/wizard1.png";
 import wizard2 from "../assets/images/characters/wizards/wizard2.png";
 import wizard3 from "../assets/images/characters/wizards/wizard3.png";
-import wizard4 from "../assets/images/characters/wizards/wizard1.png";
+// No wizard4 image present
 
 import bard1 from "../assets/images/characters/bard/bard1.png";
 import bard2 from "../assets/images/characters/bard/bard2.png";
@@ -32,13 +32,18 @@ import barbarian2 from "../assets/images/characters/barbarian/barbarian2.png";
 import barbarian3 from "../assets/images/characters/barbarian/barbarian3.png";
 import barbarian4 from "../assets/images/characters/barbarian/barbarian4.png";
 
+import cleric1 from "../assets/images/clerics/cleric1.png";
+import cleric2 from "../assets/images/clerics/cleric2.png";
+import cleric3 from "../assets/images/clerics/cleric3.png";
+import cleric4 from "../assets/images/clerics/cleric4.png";
+
 export const characterImages = {
   witch: [witch1, witch2, witch3, witch4],
   rogue: [rogue1, rogue2, rogue3, rogue4],
   warrior: [warrior1, warrior2, warrior3, warrior4],
-  hunter: [hunter1, hunter2, hunter3, hunter4],
-  wizard: [wizard1, wizard2, wizard3, wizard4],
+  hunter: [hunter1, hunter2, hunter3],
+  wizard: [wizard1, wizard2, wizard3],
   bard: [bard1, bard2, bard3, bard4],
-  cleric: [cleric1, cleric2, cleric3, cleric4],
   barbarian: [barbarian1, barbarian2, barbarian3, barbarian4],
+  cleric: [cleric1, cleric2, cleric3, cleric4],
 };
