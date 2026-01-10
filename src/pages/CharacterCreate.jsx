@@ -7,16 +7,20 @@ function CharacterCreate() {
 
   return (
     <div className="CharacterCreate">
-      <div className="CharacterHeader">Create your character</div>
+      <div className="CharacterHeader">
+        <h1>Create your character</h1>
+      </div>
 
       <form>
-        <label>
-          Your name:
-          <input type="text" />
-        </label>
-        <br />
-        Choose your class:
-        <br />
+        <div className="NameForm">
+          <label>
+            <p>Your name:</p>
+            <input type="text" />
+          </label>
+        </div>
+
+        <p>Choose your class:</p>
+
         <label className="classenContainer">
           Witch
           <input

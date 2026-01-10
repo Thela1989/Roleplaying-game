@@ -1,5 +1,26 @@
-.CharacterCreate-container {
+* {
+  font-family: "Cinzel", serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.NameForm {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.CharacterCreate {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -7,8 +28,28 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+}
+.CharacterContainer {
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+  margin: 10px;
+}
+
+img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
