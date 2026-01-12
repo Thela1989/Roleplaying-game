@@ -1,6 +1,6 @@
 import witch1 from "../assets/images/characters/witches/witch1.png";
 import witch2 from "../assets/images/characters/witches/witch2.png";
-import witch3 from "../assets/images/characters/witches/witch3.png";
+
 import witch4 from "../assets/images/characters/witches/witch4.png";
 
 import rogue1 from "../assets/images/characters/rogue/rogue1.png";
@@ -38,7 +38,7 @@ import cleric3 from "../assets/images/clerics/cleric3.png";
 import cleric4 from "../assets/images/clerics/cleric4.png";
 
 export const characterImages = {
-  witch: [witch1, witch2, witch3, witch4],
+  witch: [witch1, witch2, witch4],
   rogue: [rogue1, rogue2, rogue3, rogue4],
   warrior: [warrior1, warrior2, warrior3, warrior4],
   hunter: [hunter1, hunter2, hunter3],

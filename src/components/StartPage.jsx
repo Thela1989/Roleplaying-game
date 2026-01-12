@@ -10,6 +10,10 @@ const StartPage = ({ onStart }) => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="start-page">
       <h1>Beast Unleashed</h1>
