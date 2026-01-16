@@ -3,8 +3,12 @@ import "../styles/inventory.css";
 
 function Inventory({ characterId }) {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const SLOT_COUNT = 40;
+
+  function handleItemClick(item) {
+    console.log(item);
+  }
 
   useEffect(() => {
     if (!characterId) {
@@ -28,10 +32,10 @@ function Inventory({ characterId }) {
 
   return (
     <section className="inventory-frame">
-      <h2 className="inventory-title">Inventory</h2>
+      <h2 className="inventory-title">Ryggsäck</h2>
       {loading && <p className="inventory-empty">Laddar inventory...</p>}
       {!loading && items.length === 0 && (
-        <p className="inventory-empty">Inventory är tomt</p>
+        <p className="inventory-empty">Ryggsäcken är tomt</p>
       )}
 
       <div className="inventory-grid">
@@ -39,10 +43,18 @@ function Inventory({ characterId }) {
           const item = items[index];
 
           return (
-            <div className="inventory-slot" key={index}>
+            <div
+              className="inventory-slot"
+              key={index}
+              onClick={() => item && handleItemClick(item)}
+            >
               {item && (
                 <>
-                  <span className="inventory-item-name">{item.name}</span>
+                  <img
+                    src={`/icons/${item.icon}`}
+                    alt={item.name}
+                    className="inventory-item-icon"
+                  />
                   <span className="inventory-item-quantity">
                     ×{item.quantity}
                   </span>
