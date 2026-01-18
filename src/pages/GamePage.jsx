@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Inventory from "../components/inventory.jsx";
 
 function GamePage() {
   const [character, setCharacter] = useState(null);

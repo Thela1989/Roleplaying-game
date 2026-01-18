@@ -112,9 +112,10 @@
 
 /* ===== ITEM ICON ===== */
 .item-icon {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
 }
 
