@@ -1,12 +1,91 @@
-# React + Vite
+# Roleplaying Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fantasy roleplaying game project built with React (frontend) and Express (backend).
 
-Currently, two official plugins are available:
+## Project Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This game is currently under development.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Frontend: React + Vite
+- Backend: Node.js + Express
+- Database: PostgreSQL (via `pg`)
+
+## Project Structure
+
+```text
+.
+|- src/                # Frontend source code
+|- public/             # Static assets
+|- backend/            # Express API + database connection
+|- package.json        # Frontend scripts and dependencies
+|- backend/package.json
+```
+
+## Getting Started
+
+### 1. Install dependencies
+
+Frontend:
+
+```bash
+npm install
+```
+
+Backend:
+
+```bash
+cd backend
+npm install
+```
+
+### 2. Configure environment variables (backend)
+
+Create a `.env` file inside `backend/` and add:
+
+```env
+DB_USER=your_user
+DB_HOST=localhost
+DB_NAME=your_database
+DB_PASSWORD=your_password
+DB_PORT=5432
+```
+
+### 3. Run the app
+
+Start backend (from `backend/`):
+
+```bash
+node index.js
+```
+
+Start frontend (from project root):
+
+```bash
+npm run dev
+```
+
+Frontend runs on Vite's default dev server and backend runs on `http://localhost:3000`.
+
+## Available Frontend Scripts
+
+From the project root:
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Notes
+
+- Backend currently has no dedicated start script in `backend/package.json`; use `node index.js`.
+- External item data is fetched from the DnD 5e API.
+
+## Roadmap
+
+- Add quests and progression systems
+- Expand combat mechanics and balancing
+- Improve inventory management and item effects
+- Add save/load support for player progress
+- Increase test coverage for frontend and backend
